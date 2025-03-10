@@ -1,7 +1,7 @@
 
 public class ArrayBasedStack<T> extends Object implements StackInterface<T> {
 	
-	//T[] type parameters  
+	//T[] type parameters 
 	
 	private T[] stack; // reference to any type of Object 
 	
@@ -83,6 +83,29 @@ public class ArrayBasedStack<T> extends Object implements StackInterface<T> {
 			topItem = "The Stack is Empty";
 		}
 		return topItem; 
+		
+	}
+	
+	//returns professorList from oldest to newest professors
+	@Override
+	public String toString2(){
+		String profList = "";
+		for (int i = 0; i <= top; i++ ) {
+			profList = profList + " "+ stack[i]; 
+		}
+		
+		return profList; 
+	}
+	
+	//returns profesrorList from newest to oldest professors 
+	@Override
+	public String toString() {
+		String profList = ""; 
+		for(int i = top; i >= 0; i-- ) {
+			profList = profList + " " + stack[i]; 
+		}
+		System.out.println(profList); 
+		return profList; 
 		
 	}
 

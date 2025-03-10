@@ -14,14 +14,23 @@ public class NodeBasedStack<T> implements UnbooundedStackInterface<T> {
 	
 	@Override
 	public void pop() throws StackEmptyException {
-		// TODO Auto-generated method stub
-
+		
+			if (top != null) {
+				top = top.getLink();
+			} else {
+				throw new StackEmptyException("Pop attempted on an empty stack"); 
+			}
 	}
 
 	@Override
 	public String peek() {
-		// TODO Auto-generated method stub
-		return null;
+		String topitem; 
+		if (top != null) {
+			topitem = top.getData().toString(); 
+		} else {
+			topitem = "The stack is empty"; 
+		}
+		return topitem; 
 	}
 
 	@Override

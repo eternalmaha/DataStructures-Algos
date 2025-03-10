@@ -33,9 +33,10 @@ public class NodeDemo {
 		while(currentNode != null) {
 			System.out.println(currentNode.getData());
 			currentNode = currentNode.getLink(); 
-		}
+		}                                                                                                                                                                                                          
 		
-			
+		
+		 
 		
 		
 		

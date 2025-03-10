@@ -8,7 +8,11 @@ public class StackDemo2 {
 		
 		
 		//Reference of type StackInterface perhaps?
-		ArrayBasedStack<Book> myBookStack = new ArrayBasedStack<Book>(3); 
+		//StackInterface<Book> myBookStack = new ArrayBasedStack<Book>(3); 
+		
+		UnbooundedStackInterface<Book> myBookStack = new NodeBasedStack<Book>(); 
+		
+		
 		
 		int option; 
 		
@@ -28,9 +32,9 @@ public class StackDemo2 {
 				String bookAuthor = keyboard.nextLine(); 
 				Book newBook = new Book(bookName, bookAuthor );
 				//any time we attempt a method that can potentially throw an exception, we need a try-catch 
-				try {
+				//try {
 					myBookStack.push(newBook); 
-				}
+				//}
 				/*if(myBookStack.push(name)) {
 					System.out.println("The book, " + name + " was added to the top of stack ");
 				} else {
@@ -38,12 +42,13 @@ public class StackDemo2 {
 				}
 				*/
 				//make sure to catch the right exceptions! 
-				catch(StackFullException sef) {
+				//catch(StackFullException sef) {
 					//What about the getMessage method of the StackFullException class?
 					//It is defined in our ArrayBasedStack class!!! 
 					//Polymorphic object! 
-					System.out.println(sef.getMessage()); 
-				}
+					//System.out.println(sef.getMessage()); 
+				//}
+				//Don't need StackFullException because its a node based implementation 
 			} else if(option == 2 ) {
 				try {
 					myBookStack.pop();
