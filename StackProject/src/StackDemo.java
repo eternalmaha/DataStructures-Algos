@@ -5,7 +5,7 @@ public class StackDemo {
 		
 		//StackInterface type vs ArrayBasedStack type?
 		
-		ArrayBasedStack<Book> myBookStack = new ArrayBasedStack<Book>(3); 
+		ArrayBasedStack<Book> myBookStack = new ArrayBasedStack<>(3); 
 		System.out.println(myBookStack.peek());
 		//this array of Strings of size 3 is going to implement our stack interface that has given us some method headings for us 
 		//as requirements (in this case - pop(), peek(), push()

@@ -1,5 +1,9 @@
 package arrayBasedPackage;
-import java.util.Scanner; 
+import java.util.Scanner;
+
+//couldn't we change the access modifiers to avoid importing?
+import nodeBasedPackage.NodeBasedQueue;
+import nodeBasedPackage.UnboundedQueueInterface; 
 
 
 public class QueueDemo2 {
@@ -8,7 +12,9 @@ public class QueueDemo2 {
 		
 		Scanner keyboard = new Scanner(System.in); 
 		
-		QueueInterface<Student> waitlist = new ArrayBasedQueue<Student>(4); 
+		//QueueInterface<Student> waitlist = new ArrayBasedQueue<Student>(4); 
+		//QueueInterface<Student> waitlist = new NodeBasedQueue<Student>(); 
+		UnboundedQueueInterface<Student> waitlist = new NodeBasedQueue<Student>(); 
 		
 		int option; 
 		
@@ -28,13 +34,13 @@ public class QueueDemo2 {
 				int studentID = keyboard.nextInt(); 
 				Student currentStudent = new Student(studentName, studentID); 
 				
-				try {
+				//try {
 					waitlist.enqueue(currentStudent);
-					System.out.println("The following student was added to the waitlist " + currentStudent.toString()); 
-				} catch(QueueFullException e) {
-					System.out.println(e.getMessage()); 
-					System.out.println("The following student was not added to the waitlist " + currentStudent.toString()); 
-				}
+					//System.out.println("The following student was added to the waitlist " + currentStudent.toString()); 
+				//} catch(QueueFullException e) {
+					//System.out.println(e.getMessage()); 
+					//System.out.println("The following student was not added to the waitlist " + currentStudent.toString()); 
+				//}
 				
 			} else if(option == 2) {
 				try {

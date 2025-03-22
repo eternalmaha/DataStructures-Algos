@@ -5,7 +5,7 @@ public interface QueueInterface<T> {
 	//method headings 
 	
 	/*/
-	 * adds an item to the rear of the queue if there is room,
+	 * adds an item of type T to the rear of the queue if there is room,
 	 * otherwise throws 
 	 * QueueFullException
 	 */
@@ -13,7 +13,7 @@ public interface QueueInterface<T> {
 	public void enqueue(T item) throws QueueFullException;
 	
 	/*
-	 * removes the item at the front of the queue and returns
+	 * removes the item of type T at the front of the queue and returns
 	 * it if there is one, otherwise throws 
 	 * QueueEmptyException
 	 */

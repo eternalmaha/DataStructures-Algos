@@ -6,7 +6,7 @@ public class ArrayBasedQueue<T> extends Object implements QueueInterface<T> {
 	
 	private int front;
 	private int rear; 
-	private int numItems; 
+	private int numItems;                                     
 	
 	private T[] queue; //reference to an array of type T
 	
@@ -20,16 +20,16 @@ public class ArrayBasedQueue<T> extends Object implements QueueInterface<T> {
 	}
 	
 	public  ArrayBasedQueue(int size) {
-		super();
+		super();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 		front = 0;
-		rear = 0;
+		rear = 0;                                   
 		numItems = 0;
-		if(size > 0) {
+		if(size > 0) {                       
 			queue = (T[]) new Object[size];
 		} else {
 			queue = (T[]) new Object[5]; 
 		}
-	}
+	}                                     
 
 	@Override
 	public void enqueue(T item) throws QueueFullException {
