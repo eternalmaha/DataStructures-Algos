@@ -18,7 +18,7 @@ public interface ListInterface<T> {
 	
 	/*returns true if this item exits on the list, otherwise returns false. Find does not change the list*/
 	
-	public boolean find(T item); 
+	public boolean find(T removeFruit); 
 	
 
 }

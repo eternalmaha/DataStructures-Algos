@@ -1,5 +1,8 @@
 package arrayBasedPackage;
 
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class ArrayBasedList<T> implements ListInterface<T> {
 	
 	//instance variables
@@ -47,7 +50,16 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 
 	@Override
 	public boolean remove(T item) {
-		return false; 
+		int index = locate(item);
+		boolean removed = false;
+		if(index != -1) {
+			list[index] = null;
+			removed = true;
+			numItems--; 
+			list[index] = list[numItems]; 
+			list[numItems] = null; 
+		}
+		return removed; 
 	}
 
 	@Override
@@ -119,4 +131,69 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 	} */
 
 	}
+	
+	
+	//Ovverride toString
+	
+	@Override
+	
+	public String toString() {
+		String allItems = "";
+		for(int i = 0; i < numItems; i++) {
+			allItems = allItems + list[i];
+		}
+		return allItems; 
+	}
+	
+	/*/
+	 * Returns an object which comes from a class that implements the iterator interface. sometimes referred to as a pass through method
+	 */
+	
+	public Iterator iterator() {
+		return new ArrayBasedListIterator(); 
+	}
+	
+	/*/
+	 * Inner class is a class which is completely contained inside another class. This is usually created when only the outer class needs 
+	 * access to the inner class but this inner class does not need to be accessed outside of the class in which it is defined. Inner
+	 * classes can be thought of as a class without a class.
+	 * 
+	 * Iterator class is used to iterate or move through the list one item at a time. Since this only needs to be done
+	 * inside the class, it can be defined as an inner class. 
+	 * 
+	 * 
+	 * Private classes are inaccessible outside of the outer class in which they are declared or defined in. 
+	 * 
+	 * Iterator is an interface that is part of the Java library (API) which stands for Application Programmer Interface. 
+	 */
+	
+	
+	private class ArrayBasedListIterator extends Object implements Iterator {
+		//keeps track of the index that the iterator is on
+		private int currentLocation;
+		
+		//default constructor 
+		public ArrayBasedListIterator() {
+			super();
+			//start of the beginning of the list 
+			currentLocation = 0; 
+		}
+		
+		public boolean hasNext() {
+			return currentLocation < numItems; 
+		}
+		
+		public T next() throws NoSuchElementException{
+			//the most typical condition should be in the if-statement 
+			if (currentLocation < numItems) {
+				return list[currentLocation++];  
+			} else {
+				
+				throw new NoSuchElementException("Reached the end of the list"); 
+			}
+		}
+		
+	} 
+	
+	
 }
