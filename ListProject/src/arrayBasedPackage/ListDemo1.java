@@ -7,13 +7,13 @@ public class ListDemo1 {
 
 	public static void main(String[] args) {
 		
-		ArrayBasedList<String> fruitList = new ArrayBasedList(); 
+		ArrayBasedList<String> fruitList = new ArrayBasedList<String>(); 
 		
 		fruitList.add("Mango"); 
 		fruitList.add("Strawberry"); 
 		fruitList.add("Peach");
 		fruitList.add("Apple");
-		fruitList.add("PineAple");
+		fruitList.add("PineApple");
 		
 		System.out.println(fruitList.toString()); 
 		

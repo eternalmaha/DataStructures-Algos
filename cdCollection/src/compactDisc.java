@@ -1,4 +1,4 @@
-public class compactDist {
+public class compactDisc {
     
     //instance variables
     private String artistName;
