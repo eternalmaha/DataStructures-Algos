@@ -33,20 +33,39 @@ public class ListDemo2 {
 				System.out.println(myFavoriteFruits); 
 				
 				
-				
 			}else if(option == 2) {
 				System.out.println("Which fruit would you like to remove?"); 
-				String removeFruit = keyboard.nextLine(); 
-				myFavoriteFruits.find(removeFruit); 
-				//Fruit removeFruit = keyboard.n
-				//myFavoriteFruits.remove(removeFruit); 
+				String removeFruitName = keyboard.nextLine(); 
+				System.out.println("What is the color of the fruit you would you like to remove?"); 
+				String removeFruitColor = keyboard.nextLine();
+				Fruit removeFruit = new Fruit(removeFruitName, removeFruitColor); 
+				System.out.println(myFavoriteFruits.remove(removeFruit)); 
+				
 				
 			}else if(option == 3) {
+				System.out.println("What fruit do you wanna find?");
+				String fruitName = keyboard.nextLine();
+				
+				//get the current fruit list in string format
+				//iterate through fruit list using equals method..
+				
+				String currentList = myFavoriteFruits.toString(); 
+				
+				//All methods in the Object class were listed implicitly in every interface. Interfaces do not inherit from the Object class
+				//but they have an implicit relationship such that all public methods of the Object class are implicitly listed in every interface 
+				System.out.println(currentList); 
+				//use ArrayBasedListIterator
+				//
+				
 				
 			}else if(option == 4) {
+				System.out.println("Here is information about all of the fruits.");
+				System.out.println(myFavoriteFruits.toString()); 
 				
+			} else if(option == 5) {
+				System.out.println("Goodbye!"); 
 			} else {
-				
+				System.out.println("Incorrect input."); 
 			}
 			
 		} while(option != 5); 

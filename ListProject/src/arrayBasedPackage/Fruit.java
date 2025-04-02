@@ -36,5 +36,19 @@ public class Fruit {
 	public String toString() {
 		return "Fruit name: " + name + " Fruit color: " + color; 
 	}
+	
+	public boolean equals(Object otherObject) {
+		boolean areTheyEqual = false; 
+		if (otherObject != null && otherObject instanceof Fruit) {
+		
+			Fruit secondObject = (Fruit)otherObject;
+			//String's equal method is being called. This is based on the reference type that the equals method is being called on. 
+			if (this.name.equals(secondObject.name) ); 
+				areTheyEqual = true; 
+			}
+			
+		
+		return areTheyEqual; 
+	}
 
 }

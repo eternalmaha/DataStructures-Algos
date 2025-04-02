@@ -105,7 +105,7 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 			if(list[index].equals(item)) {
 				found = true; 
 			} else {
-			index++;
+				index++;
 			}
 		}
 		
@@ -133,7 +133,6 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 	}
 	
 	
-	//Ovverride toString
 	
 	@Override
 	
@@ -144,6 +143,22 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 		}
 		return allItems; 
 	}
+	
+	@Override
+	
+	/*public boolean equals(Object otherObject) {
+		boolean areTheyEqual = false; 
+		if (otherObject != null && otherObject instanceof T) {
+		
+			T secondObject = (T)otherObject;
+			//String's equal method is being called. This is based on the reference type that the equals method is being called on. 
+			if (secondObject.toString().equals(otherObject.toString())); 
+				areTheyEqual = true; 
+			}
+			
+		}
+		return areTheyEqual; 
+	}*/ 
 	
 	/*/
 	 * Returns an object which comes from a class that implements the iterator interface. sometimes referred to as a pass through method
@@ -193,7 +208,9 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 			}
 		}
 		
-	} 
+	}
+	
+	
 	
 	
 }
