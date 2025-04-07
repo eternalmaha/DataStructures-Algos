@@ -21,6 +21,8 @@ public interface ListInterface2<T> {
 	
 	public boolean find(T item); 
 	
+	
+	
 	public String toString(); 
 	
 	/*/
