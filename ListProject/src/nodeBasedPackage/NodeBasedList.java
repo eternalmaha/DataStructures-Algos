@@ -62,14 +62,14 @@ public class NodeBasedList<T> extends Object implements ListInterface<T>, ListIn
 		*/
 		
 		
-			while (!found && currentNode != null) {
+		while (!found && currentNode != null) {
 				if(currentNode.getData().equals(item)) {
 					found = true;  
 				} else {
-					currentNode = currentNode.getLink(); 
-				}
-			
+				    currentNode = currentNode.getLink(); 
 			}
+			
+		}
 		
 		return currentNode;
 	}

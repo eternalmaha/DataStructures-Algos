@@ -5,7 +5,7 @@ public class waitListDemo1 {
         
         Scanner keyboard = new Scanner(System.in); 
 
-        ArrayBasedQueue<Student> studentList = new ArrayBasedQueue<>(10); 
+        ArrayBasedQueue<Student> studentList = new ArrayBasedQueue<Student>(); 
 
         int option;
 

@@ -15,8 +15,8 @@ public class ListDemo3 {
 		myFavoriteBandList.add("The Police");
 		
 		
-		myFavoriteBandList.find("The aliens");
-		myFavoriteBandList.find("Rush");
+		System.out.println(myFavoriteBandList.find("The aliens"));
+		System.out.println(myFavoriteBandList.find("Rush"));
 			
 		System.out.println(myFavoriteBandList.toString()); 
 		

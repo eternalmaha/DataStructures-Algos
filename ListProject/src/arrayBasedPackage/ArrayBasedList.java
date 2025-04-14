@@ -77,12 +77,17 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 		
 		return found;*/
 		
-		int index = locate(item); 
-		boolean found = false; 
-		if (index != -1) {
-			found = true;
-		}
-		return found; 
+		boolean found = false;
+		int index = 0;
+		while(!found && index < numItems) {
+			if(list[index].equals(item)) {
+				found = true;
+			}
+			else {
+				index++;
+				}
+			}
+				return found;
 	}
 	
 	/*/
@@ -139,10 +144,10 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 	public String toString() {
 		String allItems = "";
 		for(int i = 0; i < numItems; i++) {
-			allItems = allItems + list[i];
+		allItems += "\n" + list[i].toString();
 		}
-		return allItems; 
-	}
+		return allItems;
+		}
 	
 	@Override
 	
@@ -164,7 +169,7 @@ public class ArrayBasedList<T> implements ListInterface<T> {
 	 * Returns an object which comes from a class that implements the iterator interface. sometimes referred to as a pass through method
 	 */
 	
-	public Iterator iterator() {
+	public Iterator<T> iterator() {
 		return new ArrayBasedListIterator(); 
 	}
 	
