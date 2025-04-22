@@ -23,7 +23,9 @@ public class NodeBasedList<T> extends Object implements ListInterface<T>, ListIn
 			list = currentNode; 
 			numItems++; 
 		} else {
+			//sets new node link to the first node on our list
 			currentNode.setLink(list);
+			//new node is now what list is pointing to. 
 			list = currentNode; 
 			numItems++; 
 		}
@@ -36,7 +38,7 @@ public class NodeBasedList<T> extends Object implements ListInterface<T>, ListIn
 	 * is not on the list. 
 	 */
 	
-	private Node locate(T item) {
+	private Node<T> locate(T item) {
 		
 		
 		//Make sure list is not null
@@ -45,7 +47,7 @@ public class NodeBasedList<T> extends Object implements ListInterface<T>, ListIn
 		
 		Node currentNode = list;
 		
-		//more efficient so we dont just keep looking till the end of the list...like you tried before.
+		//more efficient so we don't just keep looking till the end of the list...like you tried before.
 		boolean found = false; 
 		
 		/*if(list != null) {
@@ -112,8 +114,11 @@ public class NodeBasedList<T> extends Object implements ListInterface<T>, ListIn
 		
 		boolean found = false;
 		
+		//currentNode will return a reference to the node that was located..since the reference will only be returned 
+		//if the node was found while going through the list. 
 		Node<T> currentNode = locate(item); 
 		
+		//it'll only be null if we went through the list and never found the node with the matching item
 		if (currentNode != null) {
 			found = true;
 		} 

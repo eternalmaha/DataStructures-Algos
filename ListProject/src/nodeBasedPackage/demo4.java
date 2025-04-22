@@ -8,13 +8,32 @@ public class demo4 {
 
 		ListInterface<String> toDoList = new DoublyLinkedNodeBasedList<String>();
 		
-		toDoList.add("Study for CSC 223");
+		toDoList.add("Make dinner");
+		toDoList.add("Study for CSC223");
 		toDoList.add("Study for CSC208");
 		toDoList.add("Study for MTH264");
-		toDoList.add("Make dinner");
 		
 		
-
+		System.out.println(toDoList); 
+		
+		System.out.println(toDoList.remove("Make dinner"));
+		
+		System.out.println(toDoList); 
+		
+		System.out.println(toDoList.remove("Study for MTH264"));
+		
+		System.out.println(toDoList); 
+		
+		System.out.println(toDoList.remove("Study for CSC208"));
+		
+		System.out.println(toDoList); 
+		
+		System.out.println(toDoList.remove("Study for CSC223"));
+		
+		System.out.println(toDoList);
+		
+		
+		
 	}
 
 }

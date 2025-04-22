@@ -1,7 +1,7 @@
 package nodeBasedPackage;
 
 import arrayBasedPackage.ListInterface;
-import nodeBasedPackage.NodeBasedList.Node;
+//import nodeBasedPackage.NodeBasedList.Node;
 
 public class DoublyLinkedNodeBasedList<T> implements ListInterface<T> {
 	
@@ -41,11 +41,27 @@ public class DoublyLinkedNodeBasedList<T> implements ListInterface<T> {
 
 		boolean removed = false; 
 		
-		DoublyLinkedNode currentNode = find(item); 
+		DoublyLinkedNode currentNode = locate(item); 
 		
-		if (doublyLinkedList != null) {
-			
+		if (currentNode != null) {
+			if (currentNode == doublyLinkedList) {
+				doublyLinkedList = doublyLinkedList.getPreviousLink(); 
+				doublyLinkedList.setNextLink(null);
+				removed = true; 
+				//doublyLinkedList = doublyLinkedList.getNextLink(); 
+			} else {
+				DoublyLinkedNode prevNode = currentNode.getPreviousLink();
+				//I had to add this..
+				DoublyLinkedNode nextNode = currentNode.getNextLink();
+				if (prevNode != null) {
+					prevNode.setNextLink(currentNode.nextLink);
+				}
+				nextNode.setPreviousLink(prevNode);
+				removed = true; 
+				
+			}
 		}
+		return removed; 
 	}
 
 	
